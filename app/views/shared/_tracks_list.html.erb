@@ -1,0 +1,29 @@
+<% if aristMusic.empty? %>
+	<div class="row">
+		<div class='medium-2 columns'>
+			<%= image_tag("sad.png", :class => "poster") %>
+		</div>
+		<div class='medium-6 columns left'>
+			<p>Sorry, we don't have any sample music matching <%= artist %> at this time</p>
+		</div>
+	</div>
+
+	<% else %>
+
+		<% aristMusic.in_groups_of(4, false).each do |group| %>
+			<div class="row tracks-list-grid">
+				<% group.each do |track| %>
+        	<div class='large-3 columns'>
+						<a href="/concert/<%= @artist %>/comments/<%= track.id %>"><%= image_tag(track.artwork_url ? track.artwork_url : "headphones.png", :class => "poster track-listing-poster") %></a>
+						<br/>
+						<div class="row">
+							<div class='large-6 columns title-description'>
+								<a data-tooltip aria-haspopup="true" title="<%= track.description %>" class="track-listing-title has-tip" href="<%= track.permalink_url %>"> <%= truncate(track.title, :length => 50) %> </a>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+
+<% end %>
