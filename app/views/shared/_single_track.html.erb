@@ -17,7 +17,7 @@
 Favourite Count: <%= track.favoritings_count %>
 <% if session[:user] %>
 	<br/>
-	<a href="/concert/<%= artist %>/like/<%= track.id %>">like</a>
+	<a href="/concerts/<%= artist %>/like/<%= track.id %>">like</a>
 <% end %>
 <br/><br/>
 <!-- display urls from track description -->
