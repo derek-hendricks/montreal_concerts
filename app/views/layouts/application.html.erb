@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Concert</title>
+  <title>Montreal Concerts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="contain-to-grid fixed"> 
+	<nav class="top-bar montreal">
+	  <%= link_to "Montreal Concert Listing", root_path, :class => "main-logo" %>
+	  <% unless session[:user] %>
+			<%= link_to "Sign in", concerts_authorize_path, :class => "right" %>
+		<% end %>
+	  <span class="right">Welcome, <%= current_user %></span>
+	</nav>
+</div>
 
 <%= yield %>
 
