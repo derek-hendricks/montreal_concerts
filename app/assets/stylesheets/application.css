@@ -14,3 +14,53 @@
  *= require foundation
  *= require_self
  */
+  body {
+ 	background: url(symphony.png)
+ }
+ .container {
+ 	margin-top: 10%;
+ }
+ .contain-to-grid {
+	background-color: rgba(47,42,49, 0.9);
+	border-bottom: 1px solid rgba(30,27,31,0.9);
+}
+ .top-bar {
+	min-height: 80px;
+	padding-top: 20px;
+	background: transparent;
+	padding-left: 0.9375em;
+	padding-right: 0.9375em;
+}
+
+p {
+	color: #b3aeb5;
+	line-height: 1.7;
+	font-weight: 200;
+}
+
+.top-bar a {
+	margin-right: 3.5%;
+}
+span.right {
+	color: #b3aeb5;
+	margin-right: 3.5%;
+}
+
+p.local-heading {
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #8d8690;
+}
+
+.dates-venues {
+	color: #b3aeb5;
+}
+
+a.track-listing-title {
+	font-size: .9em;
+	text-align: center;
+}
+
+ .local-listing-headers {
+ 	margin-top: 30px;
+ }

@@ -1,4 +1,4 @@
-<div class="headline">  
+<div class="headline local-listings-head">  
 	<div class="row">
   	<div class="large-12 columns">
   		<div class="row">
@@ -26,9 +26,10 @@
 <br/>
 
 <% if !@track %>
+  <div class="row">
   <!-- display all tracks that match the @artist keyword if no track_id params provided -->
   <%= render partial: "shared/tracks_list", locals: { artist: @artist, aristMusic: @aristMusic } %>
-
+</div>
   <% else %>
     <!-- if track_id params provided, then display information for the single track -->
   <%= render partial: "shared/single_track", locals: { artist: @artist, track: @track, embedded_track: @embedded_track } %>

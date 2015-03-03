@@ -1,3 +1,42 @@
 // Place all the styles related to the concerts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.poster {
+	width: 100px;
+	border-radius: 25%;
+}
+
+.track-listing-poster {
+	width: 100px;
+	border-radius: 15px;
+  border: 1px double rgb(129, 102, 135);
+  border: 1px double rgba(129, 102, 135, .5);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; 
+  border-width: thick;
+}
+
+.track-listing-poster:hover {
+	box-shadow: 1px 1px 3px grey;
+}
+
+.user-avatar {
+	width: 50px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.tracks-list-grid {
+	padding-bottom: 40px;	
+}
+
+.title-description {
+	text-align: center;
+}
+
+.headline {
+	margin-top:100px;
+}
