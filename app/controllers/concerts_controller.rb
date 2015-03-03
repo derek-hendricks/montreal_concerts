@@ -1,6 +1,6 @@
 class ConcertsController < ApplicationController
 	before_filter :get_params
-	before_filter :soundcloud_connect, :only => :show
+	before_filter :soundcloud_connect
 	
 	def index
 		@doc = Nokogiri::HTML(open('http://www.cheapthrills.ca/news.html'), nil, 'ISO-8859-1')
