@@ -25,7 +25,17 @@
 </div>
 <br/>
 
-<!-- display all tracks that match the @artist keyword -->
-<%= render partial: "shared/tracks_list", locals: { artist: @artist, aristMusic: @aristMusic } %>
+<% if !@track %>
+  <!-- display all tracks that match the @artist keyword if no track_id params provided -->
+  <%= render partial: "shared/tracks_list", locals: { artist: @artist, aristMusic: @aristMusic } %>
+
+  <% else %>
+    <!-- if track_id params provided, then display information for the single track -->
+  <%= render partial: "shared/single_track", locals: { artist: @artist, track: @track, embedded_track: @embedded_track } %>
+
+    <!-- and also display comments for the single track -->
+  <%= render partial: "shared/track_comments", locals: { track: @track, comments: @comments } %>
+
+<% end %>
 
 

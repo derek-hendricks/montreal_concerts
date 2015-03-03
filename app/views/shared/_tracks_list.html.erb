@@ -14,7 +14,7 @@
 			<div class="row tracks-list-grid">
 				<% group.each do |track| %>
         	<div class='large-3 columns'>
-						<a href="/concert/<%= @artist %>/comments/<%= track.id %>"><%= image_tag(track.artwork_url ? track.artwork_url : "headphones.png", :class => "poster track-listing-poster") %></a>
+						<a href="/concerts/<%= @artist %>/comments/<%= track.id %>"><%= image_tag(track.artwork_url ? track.artwork_url : "headphones.png", :class => "poster track-listing-poster") %></a>
 						<br/>
 						<div class="row">
 							<div class='large-6 columns title-description'>

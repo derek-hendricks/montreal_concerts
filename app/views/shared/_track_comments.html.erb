@@ -1,0 +1,26 @@
+<div class="row">
+	<% if comments.empty? %>
+		<div class="row">
+			<div class="medium-2 columns">
+				<%= image_tag("sad.png", :class => "poster") %>
+			</div>
+			<div class="medium-6 columns left">
+				<p>There aren't any comments for <i><%= track.title %></i> yet</p>
+			</div>
+		</div>
+	<% else %>
+
+		<br/><%= comments.length %> Comments
+
+		<ul>
+			<% comments.each do |comment| %>
+				<li>
+					<img src="<%= comment.user.avatar_url %>" class="user-avatar"/><br/>
+					<strong><%= comment.user.username %></strong> <i>Posted on <%= comment.created_at %></i>
+					<blockquote><%= comment.body %></blockquote>
+				</li><br/>
+			<% end %>
+		</ul>
+
+	<% end %>
+</div>
