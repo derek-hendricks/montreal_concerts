@@ -12,26 +12,26 @@ class ConcertsController < ApplicationController
 
   def show
     if @track_id || @like_track_id
-			get_track_comments
-			embed_soundcloud_widget (@track_id || @like_track_id)
-			if @like_track_id
-				like @like_track_id
-			end
-		else
-			@aristMusic = @client.get('/tracks', :q => @artist)
-		end
+      get_track_comments
+      embed_soundcloud_widget (@track_id || @like_track_id)
+      if @like_track_id
+        like @like_track_id
+       end
+     else
+       @aristMusic = @client.get('/tracks', :q => @artist)
+     end
   end
 
-	def connect
-		redirect_to @client.authorize_url()
-	end
+  def connect
+    redirect_to @client.authorize_url()
+  end
 
-	private 
+  private 
 
-	  def get_params
-	  	@artist = params[:id]
-			@track_id = params[:comment]
-			@like_track_id = params[:track_id]
-	  end
-
+    def get_params
+      @artist = params[:id]
+      @track_id = params[:comment]
+      @like_track_id = params[:track_id]
+    end
+    
 end
