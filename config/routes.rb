@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'concert#index'
-  resources :concert
+  root to: 'concerts#index'
+  resources :concerts
 end
