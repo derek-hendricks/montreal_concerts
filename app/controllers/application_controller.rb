@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include ApplicationHelper
+  include ConcertsHelper
   helper_method :current_user
 
   def current_user
@@ -11,5 +12,5 @@ class ApplicationController < ActionController::Base
   		'Guest'
   	end
   end
-  
+
 end
