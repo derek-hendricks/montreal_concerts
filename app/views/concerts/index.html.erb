@@ -1,1 +1,42 @@
-bonjour monde
+<div class="row">
+	<!-- headers -->
+	<div class="large-6 large-3 columns">
+		<p class="local-heading">Artists</p>
+	</div>
+	<div class="large-1 large-3 columns show-for-large-only">
+		<p class="local-heading">Dates</p>
+	</div>
+	<div class="large-1 large-3 columns show-for-large-only">
+		<p class="local-heading">Venues</p>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="large-6 large-3 columns">
+
+		<!-- Artist column from cheap thrills' news page -->
+
+		<%= render partial: "shared/local_listings", locals: { column_num: '2', doc: @doc } %>
+
+	</div>
+
+	<div class="large-1 large-3 columns">
+
+		<!-- Date column from cheap thrills' news page  -->
+
+		<%= render partial: "shared/local_listings", locals: { column_num: '3', doc: @doc } %>
+
+	</div>
+
+	<div class="large-1 large-3 columns">
+
+		<!-- Venue column from cheap thrills' news page  -->
+
+		<%= render partial: "shared/local_listings", locals: { column_num: '5', doc: @doc } %>
+
+	</div>
+
+</div>
+
