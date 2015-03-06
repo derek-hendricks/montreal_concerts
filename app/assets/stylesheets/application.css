@@ -23,6 +23,8 @@
  .contain-to-grid {
 	background-color: rgba(47,42,49, 0.9);
 	border-bottom: 1px solid rgba(30,27,31,0.9);
+	
+/*	background-color: rgba(153, 0, 28, 0.9);*/
 }
  .top-bar {
 	min-height: 80px;

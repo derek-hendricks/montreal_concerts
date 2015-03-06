@@ -13,13 +13,6 @@ module ConcertsHelper
 		end
 	end
 
-	def get_track_comments
-  	@track = @client.get('/tracks/' + (@track_id || @like_track_id))
-		@comments = Array.new
-		@client.get("/tracks/#{@track_id || @like_track_id}/comments").each do |comment|
-			@comments.push(comment)
-		end
-	end
 
 	def like track_id
   	@client = Soundcloud.new(:access_token => session[:token]['access_token'])
@@ -32,5 +25,6 @@ module ConcertsHelper
 	 	@embed_info = @client.get('/oembed', :url => track.permalink_url)
 	 	@embedded_track = @embed_info['html'].html_safe
 	end
+
 
 end
