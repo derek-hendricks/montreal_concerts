@@ -28,7 +28,7 @@ class ConcertsController < ApplicationController
 
   private 
 
-   def get_track_comments
+  def get_track_comments
     @track = @client.get('/tracks/' + (@track_id || @like_track_id))
     @comments = Array.new
     @client.get("/tracks/#{@track_id || @like_track_id}/comments").each do |comment|
@@ -36,7 +36,7 @@ class ConcertsController < ApplicationController
     end
   end
 
-    def like track_id
+  def like track_id
     @client = Soundcloud.new(:access_token => session[:token]['access_token'])
     @track = @client.get('/tracks/'+track_id)
     @client.put("/me/favorites/#{@track.id}")
