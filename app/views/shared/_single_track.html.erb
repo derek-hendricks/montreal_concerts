@@ -22,8 +22,9 @@ Favourite Count: <%= track.favoritings_count %>
 <br/><br/>
 <!-- display urls from track description -->
 <% if track.description %>
-	<% track.description.scan(/(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/).each do |url|  %>
-		<a href="<%= url[0] %>"><%= url[0] %></a><br/>
+
+	<% find_url(track.description).each do |url| %>
+		<a href="<%= url %>"><%= url %></a>
 	<% end %>
 <% end %>
 </div>
